@@ -1,0 +1,30 @@
+
+    <label class="labelClass  p-3" for="selectSource">Choisir une source d'artile</label>
+    <div class="form-group  formClass">
+        
+        <select class="form-control" id="selectSource" name="selectSource" [(ngModel)]="source" required>
+            <option *ngFor="let source of sources" [value]="source">{{source}}</option>
+        </select>
+        <button class="btn btn-outline-success my-2 my-sm-0" (click)="onSearch()">Chercher</button>
+       
+    </div>
+
+
+
+
+<tr *ngFor = "let article of articlesObj ; let i = index" >
+    <div class="card text-center">
+      <div class="card-header">
+        {{ article.themes}}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ article.title}}</h5>
+        <p class="card-text">{{ article.body}}</p>
+        <a href="#!" class="btn btn-primary">{{ article.source}}</a>
+      </div>
+      <div class="blockquote-footer">
+        Date de publication : {{ article.publication_date | date}}
+      </div>
+    </div>
+    <br>   
+</tr>

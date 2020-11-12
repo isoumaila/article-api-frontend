@@ -1,0 +1,48 @@
+<div class="container">
+
+    <div class=" row pt-4">
+        <ul class="list-inline themeClass">
+            <li class="list-inline-item">
+                <a href="#" class="badge ">{{article?.departements}} /</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#" class="badge ">{{article?.regions}} </a>
+            </li>
+          
+
+        </ul>
+        <div class="col-12">
+            <h3> {{article?.title}}</h3>
+        </div>
+        
+        <ul class="list-inline themeClass">
+
+            <li class="list-inline-item" *ngFor="let sector of article?.sectorsArray">
+                <a href="#" class="badge badge-danger">{{sector}}</a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="row">
+
+        <p>{{article?.body}}</p>
+        <ul class="list-inline themeClass">
+
+            <li class="list-inline-item" *ngFor="let theme of article?.themeArray">
+                <a href="#" class="badge badge-warning">{{theme}}</a>
+            </li>
+
+        </ul>
+        <div class="col-12">
+            {{article?.edition}}
+        </div>
+        <div class="col-12">
+           {{article?.source}},  {{article?.publication_date | date}}
+        </div>
+
+    </div>
+    
+
+
+</div>

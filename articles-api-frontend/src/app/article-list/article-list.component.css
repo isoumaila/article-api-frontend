@@ -1,0 +1,14 @@
+.bodyClass{
+    width:400px;
+    height:400px;
+    color: aquamarine;
+    border: black;
+    display: flex;
+    align-content: flex-start;
+}
+.vertical-align{
+    display: flex;
+    align-items: flex-start;
+    
+}
+

@@ -1,0 +1,60 @@
+div class="container">
+    <table class = "table table-striped">
+        <thead>
+            <tr>
+                <th> Titre </th>
+                <th> Date de publication</th>
+                <th> Source </th>
+                <th> Edition </th>
+                <th> Départements</th>
+                <th> Régions </th>
+                <th> Secteurs </th>
+                <th> Thèmes </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let article of articlesObj" >
+                <td> {{ article.title }} </td>
+                <td> {{ article.publication_date | date:'EEEE, MMMM d, y'}} </td>
+                <td> {{ article.source }} </td>
+                <td> {{ article.edition}} </td>
+                <td> {{ article.departements }} </td>
+                <td> {{ article.regions}} </td>
+                <td> {{ article.sectors }} </td>
+                <td> {{ article.themes}} </td>
+                
+            </tr>
+        </tbody>
+    </table>
+
+    <label class="labelClass  p-3" for="selectSource">Choisir une source d'artile</label>
+    <div class="form-group  formClass" [class.has-error]="selectSource.invalid && selectSource.touched">
+        
+        <select class="form-control" id="selectSource" name="selectSource" [(ngModel)]="source" required  #selectSource="ngModel" >
+            <option *ngFor="let source of sources" [value]="source">{{source}}</option>
+        </select>
+        <span class="help-block" *ngIf="selectSource.invalid && selectSource.touched">toto</span>
+        <button class="btn btn-outline-success my-2 my-sm-0" (click)="onSearch()">Chercher</button>
+       
+    </div>
+
+
+
+
+<tr *ngFor = "let article of articlesObj ; let i = index" >
+    <div class="card text-center">
+      <div class="card-header">
+        {{ article.themes}}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ article.title }}</h5>
+        <p class="card-text">{{ article.body}}</p>
+        <a href="#!" class="btn btn-primary">{{ article.source}}</a>
+      </div>
+      <div class="blockquote-footer">
+        Date de publication : {{ article.publication_date | date}}
+      </div>
+    </div>
+    <br>   
+</tr>

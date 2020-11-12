@@ -1,0 +1,33 @@
+<div class="container">
+    <p>display-articles-as-card works!</p>
+
+    <div>
+        <ul class="list-inline themeClass">
+
+            <li class="list-inline-item" *ngFor="let theme of themes">
+                <a href="#" class="badge badge-warning">{{theme}}</a>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div class="row pt-4">
+        <div class="card m-1" style="width: 18rem;" *ngFor="let article of articles; let i = index">
+            <div class="card-body " (click)="onClick(article.id)">
+                <h5 class="card-title">{{article.title}}</h5>
+                
+                <h6 class="card-subtitle mb-2 text-muted">
+                    <span class="badge badge-warning" *ngFor="let ttheme of articles[i].themeArray; let n = index">{{ttheme}}</span>
+                    
+                </h6>
+                <p class="card-text line-clamp ">{{article.body}}</p>
+                <span href="#" class="card-link">{{article.publication_date | date}}</span>
+                <span href="#" class="card-link">{{article.sectors}}</span>
+            </div>
+        </div>
+
+
+</div>
+
+</div>
