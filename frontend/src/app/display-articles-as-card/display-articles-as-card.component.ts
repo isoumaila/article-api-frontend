@@ -45,7 +45,16 @@ export class DisplayArticlesAsCardComponent implements OnInit {
   }
 
   onClick(id: string) {
+    console.log(id)
     this._route.navigate(['/article', id]);
 
+  }
+
+  filterByTheme(theme:string){
+    this.articleService.getArticlesByThemes(theme).subscribe(
+      data => {
+        this.articles = data;
+      }
+    )
   }
 }

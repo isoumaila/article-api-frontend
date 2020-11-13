@@ -1,11 +1,12 @@
 <div class="container">
-    <p>display-articles-as-card works!</p>
+    
 
     <div>
         <ul class="list-inline themeClass">
 
             <li class="list-inline-item" *ngFor="let theme of themes">
-                <a href="#" class="badge badge-warning">{{theme}}</a>
+                <!--<a href="#" (click) = "filterByTheme(theme)" class="badge badge-warning">{{theme}}</a>-->
+                <span (click) = "filterByTheme(theme)" class="badge badge-warning">{{theme}}</span>
             </li>
 
         </ul>

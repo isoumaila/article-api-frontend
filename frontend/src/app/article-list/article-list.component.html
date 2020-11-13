@@ -1,8 +1,6 @@
 <div class="container">
 
-  <div class="form-group p-4">
-    <input type="text" class="form-control" placeholder="Chercher par mot" style="width:300px" [(ngModel)]="searchTerm" />
-  </div>
+  
   <tr *ngFor="let article of articlesObj | slice:startIndex:endIndex; let i = index">
 
     <div class="articleBodyDiv">
@@ -18,7 +16,7 @@
 
       <li *ngFor="let pageNumber of getArrayFromPageLength(articlesObj.length); let i = index " class="page-item">
 
-        <a class="page-link " (click)="updatePage(i)"> page {{i+1}}</a>
+        <a class="page-link " (click)="updatePage(i)"> {{i+1}}</a>
       </li>
 
     </ul>
