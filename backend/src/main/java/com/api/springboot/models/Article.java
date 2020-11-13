@@ -117,7 +117,7 @@ public class Article {
 	public void generateId() {
 
 		this.id = this.title + this.edition + this.departements + this.themes + this.publication_date.toString();
-		this.id = this.id.replace(" ", "");
+		this.id = this.id.replace(" ", "").replaceAll("[^a-zA-Z0-9]+", "");
 	}
 
 }
