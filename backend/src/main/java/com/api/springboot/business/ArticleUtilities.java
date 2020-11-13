@@ -28,7 +28,7 @@ public class ArticleUtilities {
 	public static JSONArray parseFile() {
 
 		JSONParser jsonParser = new JSONParser();
-		try (FileReader reader = new FileReader(".//jsonfiles//site_article.json")) {
+		try (FileReader reader = new FileReader(".//jsonfiles//site_articles.json")) {
 
 			Object jsonObj = jsonParser.parse(reader);
 
@@ -50,7 +50,7 @@ public class ArticleUtilities {
 	public static List<Article> parseJsonFileAndReturnArticleList() {
 
 		JSONParser jsonParser = new JSONParser();
-		try (FileReader reader = new FileReader(".//jsonfiles//site_article.json")) {
+		try (FileReader reader = new FileReader(".//jsonfiles//site_articles.json")) {
 
 			Object jsonObj = jsonParser.parse(reader);
 
